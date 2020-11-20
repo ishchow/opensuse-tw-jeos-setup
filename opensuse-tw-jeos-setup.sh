@@ -49,7 +49,7 @@ while IFS= read -r -s -n1 char; do
 done
 
 echo "Setting password for $username..."
-echo "$username:$password"
+echo "$username:$password" | chpasswd
 unset password
 
 echo "Disabling ssh root login..."
