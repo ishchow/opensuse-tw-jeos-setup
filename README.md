@@ -4,8 +4,10 @@ Base setup of brand new JeOS machine. This script sets up hostname, user, and ba
 
 Download script:
 
-`curl -s https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh > opensuse-tw-jeos-setup.sh`
-`chmod a+x opensuse-tw-jeos-setup.sh`
+```
+curl -s https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh > opensuse-tw-jeos-setup.sh
+chmod a+x opensuse-tw-jeos-setup.sh
+```
 
 Run with default arguments:
 
