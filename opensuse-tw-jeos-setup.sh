@@ -15,6 +15,9 @@ while [ $# -gt 0 ]; do
     shift
 done
 
+echo "Updating system..."
+zypper ref && sudo zypper dup
+
 echo "Changing hostname to $hostname..."
 hostnamectl set-hostname $hostname
 
