@@ -4,11 +4,11 @@ Base setup of brand new JeOS machine. This script sets up hostname, user, and ba
 
 Run with default arguments:
 
-`https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh | sudo bash -s`
+`https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh | bash -s`
 
 Run with arguments:
 
-`https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh | sudo bash -s -- -hostname tw-jeos-vm`
+`https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh | bash -s -- -hostname tw-jeos-vm`
 
 Note: see JeOS setup script for all possible arguments.
 
