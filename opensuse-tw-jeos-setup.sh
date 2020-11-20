@@ -27,10 +27,30 @@ groupadd -f users
 groupadd -f wheel
 groupadd -f docker
 
-echo "Create user..."
+echo "Creating user $username..."
 useradd -g users -G wheel,docker -m $username
-passwd $username
 
-echo "Logging in as user..."
-su - $username
+# Adapted from https://stackoverflow.com/a/22940001
+printf "Enter password for user: "
+password=''
+while IFS= read -r -s -n1 char; do
+  [[ -z $char ]] && { printf '\n'; break; } # ENTER pressed; output \n and break.
+  if [[ $char == $'\x7f' ]]; then # backspace was pressed
+      # Remove last char from output variable.
+      [[ -n $password ]] && password=${password%?}
+      # Erase '*' to the left.
+      printf '\b \b' 
+  else
+    # Add typed char to output variable.
+    password+=$char
+    # Print '*' in its stead.
+    printf '*'
+  fi
+done
 
+echo "Setting password for $username..."
+echo "$username:$password"
+unset password
+
+echo "Disabling ssh root login..."
+sed -i '/^PermitRootLogin[ \t]\+\w\+$/{ s//PermitRootLogin no/g; }' /etc/ssh/sshd_config
