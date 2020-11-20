@@ -23,7 +23,9 @@ hostnamectl set-hostname $hostname
 
 echo "Installing base packages..."
 zypper in -y -t pattern enhanced_base console sw_management documentation
+zypper in -y man-pages man-pages-posix
 zypper in -y command-not-found sudo
+mandb
 
 echo "Adding groups..."
 groupadd -f users
