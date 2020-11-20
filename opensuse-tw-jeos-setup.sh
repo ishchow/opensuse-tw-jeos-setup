@@ -15,7 +15,7 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-echo "Changing hostname..."
+echo "Changing hostname to $hostname..."
 hostnamectl set-hostname $hostname
 
 echo "Installing base packages..."
@@ -54,3 +54,6 @@ unset password
 
 echo "Disabling ssh root login..."
 sed -i '/^PermitRootLogin[ \t]\+\w\+$/{ s//PermitRootLogin no/g; }' /etc/ssh/sshd_config
+
+echo "Restarting ssh service..."
+sudo systemctl restart ssh
