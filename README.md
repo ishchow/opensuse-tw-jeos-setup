@@ -19,4 +19,4 @@ Note: see JeOS setup script for all possible arguments.
 
 # Setup dotfiles for user account
 
-Follow these [instructions](https://github.com/ishchow/dotfiles/blob/master/README.md) to 
+Follow these [instructions](https://github.com/ishchow/dotfiles/blob/master/README.md) to setup dotfiles for user account.
