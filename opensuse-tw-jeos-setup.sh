@@ -56,4 +56,7 @@ echo "Disabling ssh root login..."
 sed -i '/^PermitRootLogin[ \t]\+\w\+$/{ s//PermitRootLogin no/g; }' /etc/ssh/sshd_config
 
 echo "Restarting sshd service..."
-sudo systemctl restart sshd
+systemctl restart sshd
+
+echo "Rebooting machine..."
+systemctl reboot
