@@ -8,7 +8,7 @@ Run with default arguments:
 
 Run with arguments:
 
-`https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh | sudo bash -s -- -hostname jeos-vm-hyperv`
+`https://raw.githubusercontent.com/ishchow/opensuse-tw-jeos-setup/main/opensuse-tw-jeos-setup.sh | sudo bash -s -- -hostname tw-jeos-vm`
 
 Note: see JeOS setup script for all possible arguments.
 
