@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # args
-hostname=${hostname:-jeos-hyperv}
+hostname=${hostname:-jeos-vm-hyperv}
 username=${username:-ishaat}
 
 # parse args
