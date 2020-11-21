@@ -69,7 +69,7 @@ echo "Restarting sshd service..."
 systemctl restart sshd
 
 echo "Reinstalling all packages to install docs..."
-zypper in -f $(rpm -q -a --qf '%{NAME} ')
+zypper in -y -f $(rpm -q -a --qf '%{NAME} ')
 
 echo "Updating mandb..."
 mandb
