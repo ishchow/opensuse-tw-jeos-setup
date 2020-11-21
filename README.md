@@ -15,7 +15,7 @@ Run with default arguments:
 
 Run with arguments:
 
-`./opensuse-tw-jeos-setup.sh -hostname tw-jeos-vm`
+`./opensuse-tw-jeos-setup.sh --hostname tw-jeos-vm`
 
 Note: see JeOS setup script for all possible arguments.
 
