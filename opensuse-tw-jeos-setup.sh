@@ -15,6 +15,11 @@ while [ $# -gt 0 ]; do
     shift
 done
 
+echo "Changing zypper settings..."
+cp /etc/zypp/zypp.conf /etc/zypp/zypp.conf.bak
+sed -i '/^solver.onlyRequires/s/.*/# solver.OnlyRequires = false/g' /etc/zypp/zypp.conf
+sed -i '/^rpm.install.excludedocs/s/.*/# rpm.install.excludedocs = no/g' /etc/zypp/zypp.conf
+
 echo "Updating system..."
 zypper ref && sudo zypper dup
 
@@ -62,6 +67,12 @@ sed -i '/^PermitRootLogin[ \t]\+\w\+$/{ s//PermitRootLogin no/g; }' /etc/ssh/ssh
 
 echo "Restarting sshd service..."
 systemctl restart sshd
+
+echo "Reinstalling all packages to install docs..."
+zypper in -f $(rpm -q -a --qf '%{NAME} ')
+
+echo "Updating mandb..."
+mandb
 
 echo "Rebooting machine..."
 systemctl reboot
